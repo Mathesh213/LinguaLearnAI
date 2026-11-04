@@ -1,26 +1,512 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* =========================================
+   LINGUALEARN AI — BLOOM DESIGN SYSTEM
+   Primary visual reference: BLOOM editorial
+   ========================================= */
+
+@theme {
+  /* ── Color Palette ── */
+  --color-ivory: #EAE6DE;
+  --color-editorial-blue: #226192;
+  --color-coral: #EF8557;
+  --color-ink: #202B35;
+  --color-soft-neutral: #F5F2EC;
+  --color-white: #FFFFFF;
+
+  /* Semantic derivations */
+  --color-primary: #226192;
+  --color-accent: #EF8557;
+  --color-background: #EAE6DE;
+  --color-surface: #F5F2EC;
+  --color-text: #202B35;
+
+  /* Tints & shades */
+  --color-editorial-blue-50: #EEF4FA;
+  --color-editorial-blue-100: #D0E5F3;
+  --color-editorial-blue-200: #A1CBE7;
+  --color-editorial-blue-300: #72B1DB;
+  --color-editorial-blue-400: #4397CF;
+  --color-editorial-blue-500: #226192;
+  --color-editorial-blue-600: #1B4E76;
+  --color-editorial-blue-700: #143B59;
+  --color-editorial-blue-800: #0E283C;
+  --color-editorial-blue-900: #07141E;
+
+  --color-coral-50: #FEF5F0;
+  --color-coral-100: #FDDFD0;
+  --color-coral-200: #FBBFA1;
+  --color-coral-300: #F89F72;
+  --color-coral-400: #F69B63;
+  --color-coral-500: #EF8557;
+  --color-coral-600: #D96A39;
+  --color-coral-700: #B5502A;
+  --color-coral-800: #91371C;
+  --color-coral-900: #6E1E0E;
+
+  --color-ink-50: #EEF0F2;
+  --color-ink-100: #CDD2D7;
+  --color-ink-200: #9BA5AD;
+  --color-ink-300: #697884;
+  --color-ink-400: #374B5A;
+  --color-ink-500: #202B35;
+  --color-ink-600: #1A232B;
+  --color-ink-700: #131B21;
+  --color-ink-800: #0D1217;
+  --color-ink-900: #060A0D;
+
+  /* ── Typography ── */
+  --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Font sizes — editorial scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+  --text-8xl: 6rem;
+  --text-9xl: 8rem;
+
+  /* ── Spacing ── */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-26: 6.5rem;
+  --spacing-30: 7.5rem;
+  --spacing-36: 9rem;
+
+  /* ── Border Radius ── */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+
+  /* ── Shadows ── */
+  --shadow-soft: 0 2px 20px rgba(32, 43, 53, 0.08);
+  --shadow-medium: 0 4px 32px rgba(32, 43, 53, 0.12);
+  --shadow-strong: 0 8px 48px rgba(32, 43, 53, 0.16);
+  --shadow-editorial: 0 1px 3px rgba(32, 43, 53, 0.06), 0 20px 60px rgba(32, 43, 53, 0.08);
+
+  /* ── Transitions ── */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* =========================================
+   BASE STYLES
+   ========================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* =========================================
+   TYPOGRAPHY — EDITORIAL SYSTEM
+   ========================================= */
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.editorial-hero {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.0;
+}
+
+.editorial-serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.editorial-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-ink);
+}
+
+/* =========================================
+   SELECTION
+   ========================================= */
+
+::selection {
+  background: rgba(239, 133, 87, 0.25);
+  color: var(--color-ink);
+}
+
+/* =========================================
+   SCROLLBAR
+   ========================================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-soft-neutral);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(34, 97, 146, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 97, 146, 0.5);
+}
+
+/* =========================================
+   UTILITY CLASSES
+   ========================================= */
+
+/* Gradient backgrounds */
+.gradient-editorial {
+  background: linear-gradient(135deg, var(--color-editorial-blue) 0%, #1a4f78 100%);
+}
+
+.gradient-coral {
+  background: linear-gradient(135deg, var(--color-coral) 0%, #d96a39 100%);
+}
+
+.gradient-ivory {
+  background: linear-gradient(180deg, var(--color-ivory) 0%, var(--color-soft-neutral) 100%);
+}
+
+.gradient-ink-to-blue {
+  background: linear-gradient(135deg, var(--color-ink) 0%, var(--color-editorial-blue) 100%);
+}
+
+/* Glass morphism */
+.glass {
+  background: rgba(245, 242, 236, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-blue {
+  background: rgba(34, 97, 146, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(34, 97, 146, 0.15);
+}
+
+/* Text gradient */
+.text-gradient-blue {
+  background: linear-gradient(135deg, var(--color-editorial-blue), #4397cf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-coral {
+  background: linear-gradient(135deg, var(--color-coral), #d96a39);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Noise texture overlay (editorial feel) */
+.texture-overlay {
+  position: relative;
+}
+
+.texture-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+}
+
+/* =========================================
+   ANIMATION UTILITIES
+   ========================================= */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s var(--ease-out) both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s var(--ease-out) both;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s var(--ease-out) both;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s var(--ease-spring) both;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, var(--color-soft-neutral) 25%, var(--color-ivory) 50%, var(--color-soft-neutral) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+/* Stagger animation delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+
+/* =========================================
+   COMPONENT BASE STYLES
+   ========================================= */
+
+/* Editorial divider */
+.divider-editorial {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(32, 43, 53, 0.1), transparent);
+}
+
+/* Skill pill */
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* Demo badge */
+.demo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.625rem;
+  background: rgba(34, 97, 146, 0.1);
+  border: 1px solid rgba(34, 97, 146, 0.25);
+  border-radius: 9999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-editorial-blue);
+}
+
+/* Processing stage */
+.processing-stage {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.processing-stage.active {
+  background: rgba(34, 97, 146, 0.08);
+  border-left: 3px solid var(--color-editorial-blue);
+}
+
+.processing-stage.done {
+  background: rgba(239, 133, 87, 0.08);
+  border-left: 3px solid var(--color-coral);
+}
+
+/* =========================================
+   ACCESSIBILITY OVERRIDES
+   ========================================= */
+
+/* High contrast mode */
+.high-contrast {
+  --color-background: #FFFFFF;
+  --color-text: #000000;
+  --color-primary: #0052A3;
+}
+
+.high-contrast body {
+  background: #fff;
+  color: #000;
+}
+
+/* Dyslexia-friendly mode */
+.dyslexia-font {
+  font-family: 'Arial', 'Helvetica', sans-serif !important;
+  letter-spacing: 0.08em;
+  word-spacing: 0.2em;
+  line-height: 1.8;
+}
+
+/* Reading mode */
+.reading-mode {
+  background: #FAFAFA !important;
+  max-width: 68ch;
+  margin: 0 auto;
+  font-size: 1.125rem;
+  line-height: 1.9;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-coral);
+  outline-offset: 2px;
+}
+
+/* Skip to content */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 8px;
+  background: var(--color-editorial-blue);
+  color: white;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* =========================================
+   SECTION WRAPPERS
+   ========================================= */
+
+.section-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-container {
+    padding: 0 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-container {
+    padding: 0 4rem;
+  }
+}
+
+/* =========================================
+   RECHARTS OVERRIDES
+   ========================================= */
+
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background: var(--color-soft-neutral) !important;
+  border: 1px solid rgba(34, 97, 146, 0.15) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.recharts-cartesian-grid line {
+  stroke: rgba(32, 43, 53, 0.06) !important;
 }
