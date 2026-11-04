@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌍 LinguaLearn AI
+### Understand More. Learn Without Limits.
 
-## Getting Started
+**LinguaLearn AI** is an AI-powered multilingual learning assistant that makes education accessible by transforming study materials into personalized learning experiences.
 
-First, run the development server:
+## 🚀 Problem Statement
+Students often struggle with educational materials due to language barriers, complex terminology, and different learning levels. Traditional translation tools do not adequately address educational context or individual understanding.
+
+## 💡 Our Solution
+LinguaLearn AI combines context-aware AI translation, intelligent simplification, topic analysis, and personalized assessments to help every student learn effectively.
+
+## ✨ Key Features
+
+- 📄 **Document Upload:** Upload PDF, DOCX, PPTX, and TXT study materials.
+- 🌐 **Multilingual Translation:** Translate educational content into English, Tamil, Hindi, Telugu, and Malayalam.
+- 🧠 **Smart Simplification:** Adapt explanations to beginner, intermediate, and advanced learning levels.
+- 📊 **Topic Intelligence:** Identify difficult concepts, prerequisites, and topic complexity.
+- 📝 **AI Quiz Generation:** Generate questions directly from uploaded study materials.
+- 🎯 **Personalized Learning:** Identify weak areas and recommend topics for improvement.
+- 🔊 **Voice Learning:** Listen to translated and simplified content.
+- ♿ **Accessibility:** Reading mode, adjustable font sizes, and accessible learning controls.
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| Next.js | Application framework |
+| React & TypeScript | Frontend development |
+| Tailwind CSS | Styling |
+| Gemini API | AI intelligence |
+| PDF.js | PDF text extraction |
+| Mammoth.js | DOCX extraction |
+| IndexedDB | Local document storage |
+| Recharts | Progress visualization |
+
+## ⚙️ Getting Started
+
+### Prerequisites
+- Node.js 18+
+- pnpm
+- Google Gemini API key
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone YOUR_REPOSITORY_URL
+cd frontend
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Configuration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a `.env.local` file in the project root:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+GEMINI_API_KEY=your_gemini_api_key
+GEMINI_MODEL=your_supported_gemini_model
+```
 
-## Learn More
+Never commit your API key to GitHub.
 
-To learn more about Next.js, take a look at the following resources:
+### Run Locally
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open [http://localhost:3000](http://localhost:3000).
 
-## Deploy on Vercel
+## 🎯 Our Vision
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To eliminate language barriers in education and empower students to understand, explore, and master concepts in the language and learning style they prefer.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+**Built with ❤️ for ELX-P01 – Global Inclusivity & Accessibility.**
